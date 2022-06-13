@@ -56,7 +56,7 @@ module.exports = {
 		} else {
 			interaction.reply({
 				content: "Please enter a valid type",
-				ephemeral: false,
+				ephemeral: true,
 			});
 		}
 		
