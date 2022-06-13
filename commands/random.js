@@ -14,43 +14,48 @@ module.exports = {
 		.addStringOption((option) =>
 			option
 				.setName("type")
-				.setDescription("Choose from agent, role, weapon, and map")
+				.setDescription("Choose from agent, role, weapon, map, rifle, primary, and secondary")
 				.setRequired(true)
 		),
 	async execute(interaction) {
 		if (interaction.options.getString("type") === "agent") {
 			interaction.reply({
-				content: agents[Math.floor(Math.random()*agents.length)],
+				content: "**Your random agent is:** "+agents[Math.floor(Math.random()*agents.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "role") {
 			interaction.reply({
-				content: roles[Math.floor(Math.random()*roles.length)],
+				content: "**Your random role is:** "+roles[Math.floor(Math.random()*roles.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "weapon") {
 			interaction.reply({
-				content: weapons[Math.floor(Math.random()*weapons.length)],
+				content: "**Your random weapon is:** "+weapons[Math.floor(Math.random()*weapons.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "map") {
 			interaction.reply({
-				content: maps[Math.floor(Math.random()*maps.length)],
+				content: "**Your random map is:** "+maps[Math.floor(Math.random()*maps.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "rifle") {
 			interaction.reply({
-				content: primaryRifle[Math.floor(Math.random()*primaryRifle.length)],
+				content: "**Your random Primary Rifle is:** "+primaryRifle[Math.floor(Math.random()*primaryRifle.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "primary") {
 			interaction.reply({
-				content: primaryWeapons[Math.floor(Math.random()*primaryWeapons.length)],
+				content: "**Your random Primary Weapon is:** "+primaryWeapons[Math.floor(Math.random()*primaryWeapons.length)],
 				ephemeral: false,
 			});
 		} else if (interaction.options.getString("type") === "secondary") {
 			interaction.reply({
-				content: secondary[Math.floor(Math.random()*secondary.length)],
+				content: "**Your random Secondary Weapon is:** "+secondary[Math.floor(Math.random()*secondary.length)],
+				ephemeral: false,
+			});
+		} else {
+			interaction.reply({
+				content: "Please enter a valid type",
 				ephemeral: false,
 			});
 		}
